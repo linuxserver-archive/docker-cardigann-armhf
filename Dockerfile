@@ -10,6 +10,7 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 # install packages and update ca-certificates
+RUN \
  apk add --no-cache \
 	ca-certificates \
 	libc6-compat \
