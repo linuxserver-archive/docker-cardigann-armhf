@@ -15,7 +15,7 @@ RUN \
 	ca-certificates \
 	libc6-compat \
 	wget && \
- update ca-certificates && \
+ update-ca-certificates && \
 
 # install cardigan
  wget -O \
