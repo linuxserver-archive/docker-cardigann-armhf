@@ -9,19 +9,16 @@ ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
-# install build packages
-RUN \
- apk add --no-cache --virtual=build-dependencies \
-	curl \
-	tar && \
-
-# install runtime packages
+# install packages and update ca-certificates
  apk add --no-cache \
-	libc6-compat && \
+	ca-certificates \
+	libc6-compat \
+	wget && \
+ update ca-certificates && \
 
 # install cardigan
- curl -o \
- /tmp/cardigann-src.tgz -L \
+ wget -O \
+ /tmp/cardigann-src.tgz \
 	https://bin.equinox.io/c/3u8U4iwUn6o/cardigann-stable-linux-arm.tgz && \
  tar xf \
  /tmp/cardigann-src.tgz -C \
@@ -31,8 +28,6 @@ RUN \
 	/usr/bin/cardigann && \
 
 # cleanup
- apk del --purge \
-	build-dependencies && \
  rm -rf \
 	/tmp/*
 
