@@ -59,7 +59,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 ## Setting up the application
 `IMPORTANT... THIS IS THE ARMHF VERSION`
 
-Configure via the webui at `<your-ip>:5060`, using variables, SOCKS_PROXY or HTTP_PROXY, see [parameters](https://github.com/linuxserver/docker-sonarr-armhf#parameters) cardigann can be used with a proxy
+Configure via the webui at `<your-ip>:5060`, using variables, SOCKS_PROXY or HTTP_PROXY, see [parameters](#Parameters) cardigann can be used with a proxy
 
 ## Info
 
