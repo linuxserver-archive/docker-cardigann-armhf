@@ -1,7 +1,7 @@
-FROM lsiobase/alpine.armhf:3.5
+FROM lsiobase/alpine.armhf:3.6
 MAINTAINER sparklyballs
 
-# build variables
+# build variables
 ARG GOPATH=/tmp/golang
 ARG CARDIGANN_DIR=$GOPATH/src/github.com/cardigann/cardigann
 
@@ -22,17 +22,17 @@ RUN \
 	go \
 	make && \
 
-# install runtime packages
+# install runtime packages
  apk add --no-cache \
 	ca-certificates && \
 
-# compile cardigann
+# compile cardigann
  git clone https://github.com/cardigann/cardigann.git "${CARDIGANN_DIR}" && \
  git -C $CARDIGANN_DIR checkout $(git -C $CARDIGANN_DIR describe --tags --candidates=1 --abbrev=0) && \
  make --debug --directory=$CARDIGANN_DIR install && \
 	install -Dm755 $GOPATH/bin/cardigann /usr/bin/cardigann && \
 
-# cleanup
+# cleanup
  apk del --purge \
 	build-dependencies && \
  rm -rf \
