@@ -5,7 +5,7 @@
 [cardurl]: https://github.com/cardigann/cardigann
 [hub]: https://hub.docker.com/r/lsioarmhf/cardigann/
 
-THIS IMAGE IS DEPRECATED. PLEASE USE THE MULTI-ARCH IMAGES AT `linuxserver/cardigann
+THIS IMAGE IS DEPRECATED. PLEASE USE THE MULTI-ARCH IMAGES AT `linuxserver/cardigann`
 
 [![linuxserver.io](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_medium.png)][linuxserverurl]
 
